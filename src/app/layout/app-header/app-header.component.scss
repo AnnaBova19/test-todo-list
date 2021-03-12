@@ -1,0 +1,14 @@
+::ng-deep {
+  .mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000; 
+  }
+  .mat-list-base {
+    padding-top: 0 !important;
+    .mat-list-item {
+      color: inherit;
+    }
+  }
+}

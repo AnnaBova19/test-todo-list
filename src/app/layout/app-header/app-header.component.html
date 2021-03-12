@@ -1,0 +1,18 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="start center" color="primary">
+  <button mat-icon-button aria-label="Example icon-button with menu icon"
+    [matMenuTriggerFor]="menu" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let item of headerMenu" (click)="goTo(item.link)">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.title}}</span>
+    </button>
+  </mat-menu>
+  <mat-nav-list fxLayout="row" fxLayoutAlign="start center" fxHide.lt-md>
+    <a mat-list-item *ngFor="let item of headerMenu" [routerLink]="item.link">
+      {{ item.title }} 
+    </a>
+  </mat-nav-list>
+</mat-toolbar>
+
