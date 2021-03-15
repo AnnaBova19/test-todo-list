@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { TodosState } from './core/store/state';
 
 @NgModule({
   declarations: [
@@ -29,12 +26,6 @@ import { TodosState } from './core/store/state';
       'lt-lg',
       'gt-lg'
       ]
-    }),
-    NgxsModule.forRoot([
-      TodosState      
-    ]),
-    NgxsStoragePluginModule.forRoot({
-      key: 'todos'
     }),
   ],
   providers: [],

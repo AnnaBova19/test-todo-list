@@ -1,0 +1,7 @@
+<mat-dialog-content>
+  {{ message }}
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="end">
+  <button mat-button mat-dialog-close (click)="closeDialog()">No</button>
+  <button mat-raised-button color="primary" (click)="confirm()">Yes</button>
+</mat-dialog-actions>

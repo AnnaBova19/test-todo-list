@@ -1,0 +1,39 @@
+::ng-deep {
+  .todo-card {
+    width: 270px;
+    height: 270px;
+    .mat-card-header-text {
+      width: 100%;
+      margin: 0 !important;
+    }
+    .mat-chip-list-wrapper {
+      margin-bottom: 10px !important;
+    }
+    .mat-card-content {
+      position: relative;
+      height: calc(270px - 52px);
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to top, #fff, transparent); 
+      }
+      .todo-content {
+        height: 100%;
+        overflow: auto;
+      }
+    }
+    &.expired {
+      opacity: .5;
+    }
+  }
+  .todo-menu {
+    min-height: 30px;
+    .mat-menu-item {
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+}

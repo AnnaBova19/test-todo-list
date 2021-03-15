@@ -24,3 +24,10 @@ export class DeleteTodo {
   constructor(public id: number) {
   }
 }
+
+export class ClearTodos {
+  static readonly type = '[Todo] Clear';
+
+  constructor() {
+  }
+}

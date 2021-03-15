@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Todo } from './models';
-import { GetTodos, AddTodo, UpdateTodo, DeleteTodo } from './actions';
+import { GetTodos, AddTodo, UpdateTodo, DeleteTodo, ClearTodos } from './actions';
 
 export interface TodosStateModel {
   todos: Todo[];
@@ -19,7 +19,7 @@ export class TodosState {
   constructor() { }
 
   @Selector()
-  static getMessages(state: TodosStateModel) {
+  static getTodos(state: TodosStateModel) {
     return state.todos;
   }
 
@@ -58,6 +58,15 @@ export class TodosState {
     ctx.setState({
       ...state,
       todos: filteredArray,
+    });
+  }
+
+  @Action(ClearTodos)
+  clearTodos(ctx: StateContext<TodosStateModel>) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      todos: [],
     });
   }
 }

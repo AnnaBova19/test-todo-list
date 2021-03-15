@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px">
+  <button mat-raised-button color="primary" (click)="openTodoDialog()">
+    Create Todo
+  </button>
+  <button *ngIf="(todos$ | async)?.length"
+    mat-stroked-button color="primary" (click)="clearAll()">
+    Clear all Todos
+  </button>
+</div>
+
+<div class="todos-wrapper">
+  <div *ngIf="(todos$ | async)?.length;else no_todos" class="todos-grid">
+    <app-todo-card
+      *ngFor="let todo of todos$ | async | sortBy: 'isCompleted'"
+      [todo]="todo">
+    </app-todo-card>
+  </div>
+  <ng-template #no_todos>
+    <h3>There are no any todos yet...</h3>
+  </ng-template>
+</div>

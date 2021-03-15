@@ -1,0 +1,34 @@
+<mat-card class="todo-card" [ngClass]="{'expired': isExpired}">
+  <mat-card-header>
+    <mat-card-title fxLayout="row" fxLayoutAlign="space-between center">
+      <span>
+        {{ todo.name }}
+      </span>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon *ngIf="todo.isImportant" color="accent"
+          matTooltip="Important" [matTooltipPosition]="'left'">
+          star
+        </mat-icon>
+        <button mat-icon-button>
+          <mat-icon [matMenuTriggerFor]="menu" color="primary">more_vert</mat-icon>
+        </button>
+      </div>
+      <mat-menu #menu="matMenu" class="todo-menu">
+        <button *ngIf="!isExpired" mat-menu-item (click)="openTodoDialog()">
+          Edit
+        </button>
+        <button mat-menu-item (click)="confirmDelete()">
+          Delete
+        </button>
+      </mat-menu>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="todo-content">
+      <mat-chip-list *ngIf="todo.isCompleted">
+        <mat-chip color="primary" selected>Completed</mat-chip>
+      </mat-chip-list>
+      {{ todo.description }}
+    </div>
+  </mat-card-content>
+</mat-card>

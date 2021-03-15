@@ -24,11 +24,11 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        loadChildren: () => import('../../pages/home/home.module').then(m => m.HomeModule)
+        loadChildren: () => import('../../modules/home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'todos',
-        loadChildren: () => import('../../pages/todos/todos.module').then(m => m.TodosModule)
+        loadChildren: () => import('../../modules/todos/todos.module').then(m => m.TodosModule)
       },
     ]
   }

@@ -3,6 +3,6 @@ export interface Todo {
   name: string;
   description: string;
   isCompleted: Boolean;
-  isFavourite: Boolean;
+  isImportant: Boolean;
   expiryDate: Date;
 }

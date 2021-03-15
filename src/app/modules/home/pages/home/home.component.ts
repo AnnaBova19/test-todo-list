@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToTodos() {
+  goToTodos(): void {
     this.router.navigate(['todos']);
   }
 }
